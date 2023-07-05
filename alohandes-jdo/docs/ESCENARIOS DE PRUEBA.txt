@@ -1,0 +1,541 @@
+﻿--- PUNTO 1: Pruebas de unicidad de tuplas
+
+
+-- TABLA TIPOMIEMBROCOMUNIDAD
+
+
+-- a. PK NUEVA
+insert into TIPOMIEMBROCOMUNIDAD (ID, NOMBRE) values (1, 'Profesor');
+
+
+-- b. PK CONOCIDA
+insert into TIPOMIEMBROCOMUNIDAD (ID, NOMBRE) values (1, 'Empleado');
+
+
+-- c. COMPROBACIÓN
+SELECT * FROM TIPOMIEMBROCOMUNIDAD;
+
+
+-- TABLA CLIENTE
+-- a. PK NUEVA
+insert into CLIENTE (CEDULA, CORREO, NOMBRE, CELULAR, VINCULACION, CLAVE) values (1, 'gaburrow0@mysql.com', 'Greggory Aburrow', 3615164114, 1, 'GmPSHFF7');
+-- b. PK CONOCIDA
+insert into CLIENTE (CEDULA, CORREO, NOMBRE, CELULAR, VINCULACION, CLAVE) values (1, 'pshirley1@unc.edu', 'Persis Shirley', 3512378883, 2, 'xHL5SG');
+-- c. COMPROBACIÓN
+SELECT * FROM CLIENTE;
+
+
+-- TABLA OPERADOR
+
+
+-- a. PK NUEVA
+insert into OPERADOR (ID, INGRESOPORANIOACTUAL, INGRESOPORANIOCORRIDO, NOMBRE, CLAVE) values (1, 6611170.0, 8740869.0, 'Yule Roslen', 'MRtQFKEEl0CK');
+-- b. PK CONOCIDA
+insert into OPERADOR (ID, INGRESOPORANIOACTUAL, INGRESOPORANIOCORRIDO, NOMBRE, CLAVE) values (1, 8149244.47, 835138.45, 'Niles Errichiello', '34gMBU');
+-- c. COMPROBACIÓN
+SELECT * FROM OPERADOR;
+
+
+-- TABLA TIPOOPERADOREMPRESA
+-- a. PK NUEVA
+insert into TIPOOPERADOREMPRESA (ID, NOMBRE) values (1, 'Hotel');
+-- b. PK CONOCIDA
+insert into TIPOOPERADOREMPRESA (ID, NOMBRE) values (1, 'Hostal');
+-- c. COMPROBACIÓN
+SELECT * FROM TIPOOPERADOREMPRESA;
+
+
+-- TABLA EMPRESA
+-- a. PK NUEVA
+insert into EMPRESA (NIT, UBICACION, RECEPCION, REGISTROTURISMO, REGISTROCAMARA, NUMEROCONTACTO, TIPO) values (1, '7 Columbus Plaza', 1, 415732996, 262953035, 3575586539, 1);
+-- b. PK CONOCIDA
+insert into EMPRESA (NIT, UBICACION, RECEPCION, REGISTROTURISMO, REGISTROCAMARA, NUMEROCONTACTO, TIPO) values (2, '3 Columbus Court', 0, 738607695, 407720156, 3951890772, 2);
+-- c. COMPROBACIÓN
+SELECT * FROM EMPRESA;
+
+
+-- TABLA TIPOOPERADORNATURAL
+-- a. PK NUEVA
+insert into TIPOOPERADORNATURAL (ID, NOMBRE) values (1, 'Vecino');
+-- b. PK CONOCIDA
+insert into TIPOOPERADORNATURAL (ID, NOMBRE) values (1, 'PersonaNatural');
+-- c. COMPROBACIÓN
+SELECT * FROM TIPOOPERADORNATURAL;
+
+
+-- TABLA PERSONANATURAL
+-- a. PK NUEVA
+insert into PERSONANATURAL (CEDULA, CORREO, CELULAR, TIPO) values (6, 'tsawell5@lycos.com', 3774680631, 3);
+-- b. PK CONOCIDA
+insert into PERSONANATURAL (CEDULA, CORREO, CELULAR, TIPO) values (7, 'emaudsley6@privacy.gov.au', 3296144508, 2);
+-- c. COMPROBACIÓN
+SELECT * FROM PERSONANATURAL;
+
+
+-- TABLA CONTRATO
+
+
+-- a. PK NUEVA
+
+
+insert into CONTRATO (ID, INTERNET, ADMINISTRACION, SERVICIOSPUBLICOS, TV) values (1, 1, 1, 1, 0);
+
+
+-- b. PK CONOCIDA
+insert into CONTRATO (ID, INTERNET, ADMINISTRACION, SERVICIOSPUBLICOS, TV) values (1, 0, 1, 0, 0);
+
+
+-- c. COMPROBACIÓN
+SELECT * FROM CONTRATO;
+
+
+
+
+
+
+-- 9. Seguro
+
+
+-- a.
+insert into SEGURO (ID, NOMBREEMPRESA, MODALIDAD,
+CODEUDOR, VALORARRIENDO, DURACION)
+values (49, 'Chatterbridge', 'digital', 0, 9202664.0, 6);
+
+
+-- b.
+insert into SEGURO (ID, NOMBREEMPRESA, MODALIDAD,
+CODEUDOR, VALORARRIENDO, DURACION)
+values (49, 'Feedmix', 'presencial', 0, 1410842.0, 12);
+
+
+-- c.
+SELECT * FROM SEGURO;
+
+
+
+
+-- 10. Horario
+
+
+-- a.
+insert into HORARIO (ID, HORAAPERTURA, HORACIERRE)
+values (49, to_date('2022-11-13 18:09:53', 'yyyy-mm-dd hh24-mi-ss'),
+to_date('2022-11-14 0:10:47', 'yyyy-mm-dd hh24-mi-ss'));
+
+
+-- b.
+insert into HORARIO (ID, HORAAPERTURA, HORACIERRE)
+values (49, to_date('2022-03-31 21:42:03', 'yyyy-mm-dd hh24-mi-ss'),
+to_date('2022-04-27 22:40:21', 'yyyy-mm-dd hh24-mi-ss'));
+
+
+--c
+SELECT * FROM HORARIO;
+
+
+
+
+-- 11. TipoAlojamiento
+
+
+-- a.
+insert into TIPOALOJAMIENTO (ID, NOMBRE, TIPOPAGO)
+values (49, 'habitacionHotel', 'dia');
+
+
+-- b.
+insert into TIPOALOJAMIENTO (ID, NOMBRE, TIPOPAGO)
+values (49, 'habitacionHostal', 'mes');
+
+
+-- c.
+SELECT * FROM TIPOALOJAMIENTO;
+
+
+
+
+-- 12. Alojamiento
+
+
+-- a.
+insert into ALOJAMIENTO (ID, NUMHABITACIONES, UBICACION, PRECIO, AMOBLADO,
+CAPACIDAD, COMPARTIDO, INDICEOCUPACION, TIPO, HORARIO, SEGURO,OPERADOR)
+values (49, 18, '71074 Lyons Parkway', 1329228.6, 1, 44, 1, 97.6, 49, null, 49, 1);
+
+
+-- b.
+insert into ALOJAMIENTO (ID, NUMHABITACIONES, UBICACION, PRECIO, AMOBLADO,
+CAPACIDAD, COMPARTIDO, INDICEOCUPACION, TIPO, HORARIO, SEGURO,OPERADOR)
+values (49, 5, '18 Dunning Drive', 1646894.0, 0, 48, 0, 94.7, 49, null, 49,1);
+
+
+-- c.
+SELECT * FROM ALOJAMIENTO;
+
+
+--delete from alojamiento;
+--insert into OPERADOR (ID, INGRESOPORANIOACTUAL, INGRESOPORANIOCORRIDO, NOMBRE, CLAVE) values (1, 6611170.0, 8740869.0, 'Yule Roslen', 'MRtQFKEEl0CK');
+
+
+
+
+-- 13. Reserva
+
+
+-- a.
+insert into RESERVA (ID, FECHACANCELACION, FECHAINICIO,
+FECHAFINAL, ALOJAMIENTO, CLIENTE, CONTRATO, PRECIO)
+values (49, to_date('2022-06-03', 'yyyy-mm-dd'),
+to_date('2022-03-17', 'yyyy-mm-dd'), to_date('2022-06-07', 'yyyy-mm-dd'),
+49, 4, 4, 3365758.4);
+
+
+-- b.
+insert into RESERVA (ID, FECHACANCELACION, FECHAINICIO,
+FECHAFINAL, ALOJAMIENTO, CLIENTE, CONTRATO, PRECIO)
+values (49, null, to_date('2021-04-22', 'yyyy-mm-dd'),
+to_date('2023-02-19', 'yyyy-mm-dd'), 49, 4, 4, 3052932.6);
+
+
+-- c.
+SELECT * FROM RESERVA;
+
+
+-- insert into TIPOMIEMBROCOMUNIDAD (ID, NOMBRE) values (1, 'Profesor');
+-- insert into CLIENTE (CEDULA, CORREO, NOMBRE, CELULAR, VINCULACION, CLAVE) values (4, 'gaburrow0@mysql.com', 'Greggory Aburrow', 3615164114, 1, 'GmPSHFF7');
+-- insert into CONTRATO (ID, INTERNET, ADMINISTRACION, SERVICIOSPUBLICOS, TV) values (4, 1, 1, 1, 0);
+
+
+
+
+-- 14. TipoServicioPublico
+
+
+-- a.
+insert into TIPOSERVICIOPUBLICO (ID, NOMBRE) values (1, 'agua');
+
+
+-- b.
+insert into TIPOSERVICIOPUBLICO (ID, NOMBRE) values (1, 'luz');
+
+
+-- c.
+SELECT * FROM TIPOSERVICIOPUBLICO;
+
+
+
+
+-- 15. ServicioPublico
+
+
+-- a.
+insert into SERVICIOPUBLICO (ID, COSTO, TIPO, ALOJAMIENTO)
+values (1, 181232.6, 1, 49);
+
+
+-- b.
+insert into SERVICIOPUBLICO (ID, COSTO, TIPO, ALOJAMIENTO)
+values (1, 315844.1, 1, 49);
+
+
+-- c.
+SELECT * FROM SERVICIOPUBLICO;
+
+
+delete from serviciopublico;
+
+
+-- 16. TipoServicio
+
+
+-- a.
+insert into TIPOSERVICIO (ID, NOMBRE) values (49, 'restaurante');
+
+
+-- b.
+insert into TIPOSERVICIO (ID, NOMBRE) values (49, 'piscina');
+
+
+-- c.
+SELECT * FROM TIPOSERVICIO;
+
+
+
+
+-- 17. Servicio
+
+
+-- a.
+insert into SERVICIO (ID, TIPO, ALOJAMIENTO) values (66, 49, 49);
+
+
+-- b.
+insert into SERVICIO (ID, TIPO, ALOJAMIENTO) values (66, 49, 49);
+
+
+-- c.
+SELECT * FROM SERVICIO;
+
+
+
+
+
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+--a. Inserte una tupla 1 que tenga una FK que se encuentra en la tabla referenciada
+-- Reserva con el CONTRATO existente
+-- Reserva con Todas sus FKs existentes: CONTRATO EXISTENTE
+insert into CONTRATO (ID, INTERNET, ADMINISTRACION, SERVICIOSPUBLICOS, TV) 
+values (1, 1, 1, 1, 0);
+insert into TIPOMIEMBROCOMUNIDAD (ID, NOMBRE) 
+values (5, 'padreEstudiante');
+insert into CLIENTE (CEDULA, CORREO, NOMBRE, CELULAR, VINCULACION, CLAVE) 
+values (4, 'pmoon3@comcast.net', 'Patton Moon', 3770140476, 5, 'XPZYL1iwSNf');
+insert into OPERADOR (ID, INGRESOPORANIOACTUAL, INGRESOPORANIOCORRIDO, NOMBRE, CLAVE)
+values (4, 8635982.0, 3392379.53, 'Sol Folca', 'rbcvMV');
+insert into SEGURO (ID, NOMBREEMPRESA, MODALIDAD, CODEUDOR, VALORARRIENDO, DURACION)
+values (6, 'Zoomcast', 'presencial', 0, 1910018.0, 3);
+insert into HORARIO (ID, HORAAPERTURA, HORACIERRE)
+values (7, to_date('2022-07-23 14:11:40', 'yyyy-mm-dd hh24-mi-ss'), 
+to_date('2022-05-18 1:36:17', 'yyyy-mm-dd hh24-mi-ss'));
+insert into TIPOALOJAMIENTO (ID, NOMBRE, TIPOPAGO)
+values (4, 'apartamento', 'mes');
+insert into ALOJAMIENTO (ID, NUMHABITACIONES, UBICACION, PRECIO, AMOBLADO, 
+CAPACIDAD, COMPARTIDO, INDICEOCUPACION, TIPO, HORARIO, SEGURO,OPERADOR) 
+values (2, 5, '18 Dunning Drive', 1646894.0, 0, 48, 0, 94.7, 4, 7, 6,4);
+insert into RESERVA (ID, FECHACANCELACION, FECHAINICIO, FECHAFINAL, ALOJAMIENTO, 
+CLIENTE, CONTRATO, PRECIO) values (1, to_date('2022-06-03', 'yyyy-mm-dd'), 
+to_date('2022-03-17', 'yyyy-mm-dd'), to_date('2022-06-07', 'yyyy-mm-dd'), 2, 4, 1, 3365758.4);
+
+
+--b. Inserte una tupla 1 que NO tenga una FK que se encuentra en la tabla referenciada (CONTRATO)
+insert into RESERVA (ID, FECHACANCELACION, FECHAINICIO, FECHAFINAL, ALOJAMIENTO, 
+CLIENTE, CONTRATO, PRECIO) values (2, to_date('2022-06-03', 'yyyy-mm-dd'), 
+to_date('2022-03-17', 'yyyy-mm-dd'), to_date('2022-06-07', 'yyyy-mm-dd'), 2, 4, 7, 3365758.4);
+
+
+--c. Haga las pruebas de inserción para cada caso
+SELECT * FROM RESERVA;
+
+
+--d. Haga pruebas de borrado de tuplas maestras y dependientes.
+
+
+DELETE FROM CONTRATO WHERE ID= 1;
+DELETE FROM RESERVA WHERE ID = 1;
+
+
+
+
+-- Alojamiento
+
+
+-- a. Alojamiento con FK existente Seguro
+insert into ALOJAMIENTO (ID, NUMHABITACIONES, UBICACION, PRECIO, AMOBLADO,
+CAPACIDAD, COMPARTIDO, INDICEOCUPACION, TIPO, HORARIO, SEGURO, OPERADOR)
+values (200, 18, '71074 Lyons Parkway',
+1329228.6, 1, 44, 1, 97.6, 49, null, 49, 1);
+
+
+-- b. Alojamiento con FK no existente Seguro
+insert into ALOJAMIENTO (ID, NUMHABITACIONES, UBICACION, PRECIO, AMOBLADO,
+CAPACIDAD, COMPARTIDO, INDICEOCUPACION, TIPO, HORARIO, SEGURO,OPERADOR)
+values (201, 5, '18 Dunning Drive',
+1646894.0, 0, 48, 0, 94.7, 49, null, 1000 ,1);
+
+
+-- c.
+SELECT * FROM ALOJAMIENTO;
+
+
+--  d. Haga pruebas de borrado de tuplas maestras y dependientes.
+DELETE FROM SEGURO WHERE ID = 49; -- maestra pone problema
+DELETE FROM ALOJAMIENTO WHERE ID = 200; -- dependiente no pone problema
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- a. Inserte tuplas que cumplen con las restricciones de chequeo establecidas
+insert into TIPOMIEMBROCOMUNIDAD (ID, NOMBRE) values (1, 'Profesor');
+insert into TIPOMIEMBROCOMUNIDAD (ID, NOMBRE) values (2, 'Empleado');
+insert into TIPOMIEMBROCOMUNIDAD (ID, NOMBRE) values (3, 'Egresado');
+
+
+-- b. Inserte tuplas que violan las restricciones de chequeo establecidas
+
+
+insert into TIPOMIEMBROCOMUNIDAD (ID, NOMBRE) values (1, 'Caso1');
+insert into TIPOMIEMBROCOMUNIDAD (ID, NOMBRE) values (2, 'Caso2');
+insert into TIPOMIEMBROCOMUNIDAD (ID, NOMBRE) values (3, 'Caso3');
+
+
+-- c. Haga las pruebas de inserción y borrado correspondientes.
+SELECT * FROM TIPOMIEMBROCOMUNIDAD; 
+
+
+
+
+-- Reserva
+
+
+-- a. tuplas con fechaInicio < fechaFinal
+insert into RESERVA (ID, FECHACANCELACION, FECHAINICIO, FECHAFINAL, ALOJAMIENTO,
+CLIENTE, CONTRATO, PRECIO) values (123, null,
+to_date('2022-03-17', 'yyyy-mm-dd'), to_date('2022-06-07', 'yyyy-mm-dd'),
+49, 4, 4, 3365758.4);
+
+
+insert into RESERVA (ID, FECHACANCELACION, FECHAINICIO, FECHAFINAL, ALOJAMIENTO,
+CLIENTE, CONTRATO, PRECIO) values (124, null,
+to_date('2021-04-22', 'yyyy-mm-dd'), to_date('2023-02-19', 'yyyy-mm-dd'),
+49, 4, 4, 3052932.6);
+
+
+-- b. tuplas con fechaInicio >= fechaFinal
+insert into RESERVA (ID, FECHACANCELACION, FECHAINICIO, FECHAFINAL, ALOJAMIENTO,
+CLIENTE, CONTRATO, PRECIO) values (125, null,
+to_date('2023-03-17', 'yyyy-mm-dd'), to_date('2022-06-07', 'yyyy-mm-dd'),
+49, 4, 4, 3365758.4);
+
+
+insert into RESERVA (ID, FECHACANCELACION, FECHAINICIO, FECHAFINAL, ALOJAMIENTO,
+CLIENTE, CONTRATO, PRECIO) values (126, null,
+to_date('2021-04-22', 'yyyy-mm-dd'), to_date('2021-02-19', 'yyyy-mm-dd'),
+49, 4, 4, 3052932.6);
+
+
+-- c.
+SELECT * FROM RESERVA;
+--------------------------------------------------------------------------------------------------------------------------
+
+-RF10
+--CASO ADMIN: EXITO
+SELECT reserva.cliente AS CEDULA, COUNT(reserva.alojamiento) as NUMRESERVAS, CLIENTE.NOMBRE,CLIENTE.VINCULACION, CLIENTE.CORREO
+FROM reserva 
+INNER JOIN CLIENTE ON reserva.cliente = cliente.cedula
+WHERE FECHAINICIO between to_date('2020-05-20','yyyy-mm-dd') and to_date('2024-05-20','yyyy-mm-dd')
+AND FECHACANCELACION IS NULL
+AND ALOJAMIENTO = 4156
+GROUP BY reserva.cliente, CLIENTE.NOMBRE,CLIENTE.VINCULACION, CLIENTE.CORREO
+HAVING COUNT(reserva.cliente) >= 1
+ORDER BY CEDULA;
+
+--CASO ADMIN: FALLO
+SELECT reserva.cliente AS CEDULA, COUNT(reserva.alojamiento) as NUMRESERVAS, CLIENTE.NOMBRE,CLIENTE.VINCULACION, CLIENTE.CORREO
+FROM reserva 
+INNER JOIN CLIENTE ON reserva.cliente = cliente.cedula
+WHERE FECHAINICIO between to_date('2020-05-20','yyyy-mm-dd') and to_date('2024-05-20','yyyy-mm-dd')
+AND FECHACANCELACION IS NULL
+AND ALOJAMIENTO = 100000
+GROUP BY reserva.cliente, CLIENTE.NOMBRE,CLIENTE.VINCULACION, CLIENTE.CORREO
+HAVING COUNT(reserva.cliente) >= 1
+ORDER BY CEDULA;
+
+--CASO CLIENTE: EXITO
+SELECT * FROM RESERVA
+WHERE CLIENTE = 153698
+AND FECHAINICIO between to_date('2020-07-01','yyyy-mm-dd') and to_date('2026-02-20','yyyy-mm-dd')
+AND FECHACANCELACION IS NULL
+AND ALOJAMIENTO = 5445
+ORDER BY PRECIO;
+
+-- CASO CLIENTE: FALLO
+SELECT * FROM RESERVA
+WHERE CLIENTE = 153698
+AND FECHAINICIO between to_date('2020-07-01','yyyy-mm-dd') and to_date('2026-02-20','yyyy-mm-dd')
+AND FECHACANCELACION IS NULL
+AND ALOJAMIENTO = 1
+ORDER BY PRECIO;
+
+-- RFC12
+
+-- CORRECTO: MEJOR ALOJAMIENTO
+select alojamiento.* from alojamiento where id=(select reserva.alojamiento
+from reserva
+WHERE FECHAINICIO between to_date('2022-01-01','yyyy-mm-dd') and to_date('2022-12-12','yyyy-mm-dd')
+OR FECHAFINAL between to_date('2022-01-01','yyyy-mm-dd') and to_date('2022-10-01','yyyy-mm-dd')
+AND FECHACANCELACION IS NULL
+GROUP BY reserva.alojamiento
+HAVING COUNT(reserva.alojamiento) >= 1
+ORDER BY count(ALOJAMIENTO) desc 
+FETCH FIRST 1 ROWS ONLY);
+
+-- CORRECTO: PEOR ALOJAMIENTO
+select alojamiento.* from alojamiento where id=(select reserva.alojamiento
+from reserva
+WHERE FECHAINICIO between to_date('2022-12-12','yyyy-mm-dd') and to_date('2024-10-01','yyyy-mm-dd')
+OR FECHAFINAL between to_date('2022-09-25','yyyy-mm-dd') and to_date('2022-10-01','yyyy-mm-dd')
+AND FECHACANCELACION IS NULL
+GROUP BY reserva.alojamiento
+HAVING COUNT(reserva.alojamiento) >= 1
+ORDER BY count(ALOJAMIENTO) asc
+FETCH FIRST 1 ROWS ONLY);
+
+
+-- CORRECTO: PEOR OPERADOR
+select operador.* from operador where id in (select a.operador from(
+select reserva.*,alojamiento.operador as operador from reserva
+inner join alojamiento
+on reserva.alojamiento = alojamiento.id
+WHERE FECHAINICIO between to_date('2022-12-12','yyyy-mm-dd') and to_date('2024-10-01','yyyy-mm-dd')
+OR FECHAFINAL between to_date('2022-09-25','yyyy-mm-dd') and to_date('2022-10-01','yyyy-mm-dd')
+OR (FECHAINICIO <to_date('2022-12-12','yyyy-mm-dd') and FECHAFINAL > to_date('2024-10-01','yyyy-mm-dd'))
+AND FECHACANCELACION IS NULL) a
+GROUP BY a.operador
+HAVING COUNT(a.operador) >= 1
+ORDER BY count(a.operador) asc
+FETCH FIRST 3 ROWS ONLY);
+
+-- CORRECTO: MEJOR OPERADOR
+select operador.* from operador where id in (select a.operador from(
+select reserva.*,alojamiento.operador as operador from reserva
+inner join alojamiento
+on reserva.alojamiento = alojamiento.id
+WHERE FECHAINICIO between to_date('2022-12-12','yyyy-mm-dd') and to_date('2024-10-01','yyyy-mm-dd')
+OR FECHAFINAL between to_date('2022-09-25','yyyy-mm-dd') and to_date('2022-10-01','yyyy-mm-dd')
+OR (FECHAINICIO <to_date('2022-12-12','yyyy-mm-dd') and FECHAFINAL > to_date('2024-10-01','yyyy-mm-dd'))
+AND FECHACANCELACION IS NULL) a
+GROUP BY a.operador
+HAVING COUNT(a.operador) >= 1
+ORDER BY count(a.operador) desc
+FETCH FIRST 3 ROWS ONLY);
+
+-- CASO FALLO: MEJOR ALOJAMIENTO
+select alojamiento.* from alojamiento where id=(select reserva.alojamiento
+from reserva
+WHERE FECHAINICIO between to_date('2027-01-01','yyyy-mm-dd') and to_date('2027-12-12','yyyy-mm-dd')
+OR FECHAFINAL between to_date('2027-01-01','yyyy-mm-dd') and to_date('2027-10-01','yyyy-mm-dd')
+AND FECHACANCELACION IS NULL
+GROUP BY reserva.alojamiento
+HAVING COUNT(reserva.alojamiento) >= 1
+ORDER BY count(ALOJAMIENTO) desc 
+FETCH FIRST 1 ROWS ONLY);
+
+-- CASO FALLO: PEOR OPERADOR
+select operador.* from operador where id in (select a.operador from(
+select reserva.*,alojamiento.operador as operador from reserva
+inner join alojamiento
+on reserva.alojamiento = alojamiento.id
+WHERE FECHAINICIO between to_date('2027-12-12','yyyy-mm-dd') and to_date('2027-10-01','yyyy-mm-dd')
+OR FECHAFINAL between to_date('2027-09-25','yyyy-mm-dd') and to_date('2027-10-01','yyyy-mm-dd')
+OR (FECHAINICIO <to_date('2027-12-12','yyyy-mm-dd') and FECHAFINAL > to_date('2027-10-01','yyyy-mm-dd'))
+AND FECHACANCELACION IS NULL) a
+GROUP BY a.operador
+HAVING COUNT(a.operador) >= 1
+ORDER BY count(a.operador) asc
+FETCH FIRST 3 ROWS ONLY);
+
+-- CASO FALLO: MEJOR OPERADOR
+select operador.* from operador where id in (select a.operador from(
+select reserva.*,alojamiento.operador as operador from reserva
+inner join alojamiento
+on reserva.alojamiento = alojamiento.id
+WHERE FECHAINICIO between to_date('2027-12-12','yyyy-mm-dd') and to_date('2027-10-01','yyyy-mm-dd')
+OR FECHAFINAL between to_date('2027-09-25','yyyy-mm-dd') and to_date('2027-10-01','yyyy-mm-dd')
+OR (FECHAINICIO <to_date('2027-12-12','yyyy-mm-dd') and FECHAFINAL > to_date('2027-10-01','yyyy-mm-dd'))
+AND FECHACANCELACION IS NULL) a
+GROUP BY a.operador
+HAVING COUNT(a.operador) >= 1
+ORDER BY count(a.operador) desc
+FETCH FIRST 3 ROWS ONLY);

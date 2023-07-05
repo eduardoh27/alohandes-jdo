@@ -1,0 +1,21 @@
+-- RF10: CLIENTE
+CREATE INDEX idx_Treserva_Acliente_Afechainicio_Afechafinal
+ON RESERVA (CLIENTE, FECHAINICIO, ALOJAMIENTO);
+
+-- Para la consulta RFC10: ADMIN
+CREATE INDEX idx_Treserva_Aalojamiento
+ON RESERVA (FECHAINICIO, ALOJAMIENTO);
+
+CREATE INDEX idx_Treserva_Aalojamiento
+ON RESERVA (ALOJAMIENTO);
+
+
+--RF12
+
+CREATE INDEX idx_Talojamiento_Aoperador
+ON ALOJAMIENTO (OPERADOR);
+
+CREATE INDEX idx_Treserva_Afechainicio_Afechafinal_Aalojamiento2
+ON RESERVA (FECHAINICIO,FECHAFINAL, ALOJAMIENTO);
+
+CREATE INDEX idx_Treserva_Afechainicio_Afechafinal

@@ -1,0 +1,501 @@
+﻿---------------------------------------------------------------------------- RF2: ADICIONARALOJAMIENTO -----------------------------------------------------------
+-- ST1: VERIFICAR HORARIO
+SELECT * FROM HORARIO WHERE HORAAPERTURA = to_date('2022-11-13 18:09:53', 'yyyy-mm-dd hh24-mi-ss') AND HORACIERRE = to_date('2022-11-14 0:10:47', 'yyyy-mm-dd hh24-mi-ss');
+
+
+--ST2: INSERTAR SEGURO
+INSERT INTO SEGURO (ID, NOMBREEMPRESA, MODALIDAD, CODEUDOR, VALORARRIENDO, DURACION) values (27,'Macron', 'presencial', 0, 8626856.0, 12);
+
+
+--ST3: INSERTAR ALOJAMIENTO
+INSERT INTO ALOJAMIENTO(ID, NUMHABITACIONES, UBICACION, PRECIO, AMOBLADO, CAPACIDAD, COMPARTIDO, INDICEOCUPACION, TIPO, HORARIO, SEGURO, OPERADOR) values (29, 5, '18 Dunning Drive', 1646894.0, 0, 48, 0, 94.7, 4, 7, 6,4);
+
+
+-- ST4: ADICIONAR SERVICIO
+
+
+insert into SERVICIO (ID, TIPO, ALOJAMIENTO) values (32, 14, 9);
+
+
+-- ST5: ADICIONAR SERVICIO PUBLICO
+
+
+insert into SERVICIOPUBLICO (ID, COSTO, TIPO, ALOJAMIENTO) values (48, 56310.4, 1, 7);
+---------------------------------------------------------------------------- RF4: ADICIONARRESERVA ---------------------------------------------------------------
+
+
+-- ST1: Dar cliente de acuerdo a clave y contrasenia
+SELECT * FROM CLIENTE WHERE CEDULA = 1 AND CLAVE = 'GmPSHFF7';
+
+
+-- ST2: Dar Alojamiento de acuerdo a ID
+SELECT * FROM ALOJAMIENTO WHERE ID = 2;
+
+
+-- ST3: Insertar un nuevo contrato
+
+
+INSERT INTO  CONTRATO (ID, INTERNET, ADMINISTRACION, SERVICIOSPUBLICOS, TV) values (12, 1, 1, 1, 0);
+
+
+-- ST4: Seleccionar precio, tipopago del alojamiento 
+SELECT PRECIO,TIPOPAGO from ALOJAMIENTO INNER JOIN TIPOALOJAMIENTO ON ALOJAMIENTO.tipo = TIPOALOJAMIENTO.ID WHERE ALOJAMIENTO.ID = 5;
+
+
+-- RF5 - Cancelar una reserva
+
+
+UPDATE Reserva  
+SET FECHACANCELACION = TO_DATE('2023-04-11', 'YYYY-MM-DD')
+WHERE ID = 1;
+
+
+-- Se actualiza el precio dependiendo de la fecha de cancelacion
+-- (el calculo se hace por medio de la logica de la app)
+
+
+UPDATE Reserva
+SET PRECIO = PRECIO*0.1
+WHERE ID = 1;
+
+
+-- Se actualizan los ingresos del operador con base en el nuevo ingreso
+
+
+UPDATE Operador
+SET INGRESOPORANIOACTUAL = (SELECT sum(RESERVA.PRECIO) FROM Reserva
+                                    INNER JOIN Alojamiento
+                                    ON RESERVA.ALOJAMIENTO = ALOJAMIENTO.ID
+                                    WHERE OPERADOR = 3 AND FECHAINICIO >= TO_DATE('2023-01-01', 'YYYY-MM-DD'))
+WHERE ID = 3;
+
+
+UPDATE Operador
+SET INGRESOPORANIOCORRIDO = (SELECT sum(RESERVA.PRECIO) FROM Reserva
+                                    INNER JOIN Alojamiento
+                                    ON RESERVA.ALOJAMIENTO = ALOJAMIENTO.ID
+                                    WHERE OPERADOR = 3 AND FECHAINICIO >= TO_DATE('2023-04-11', 'YYYY-MM-DD'))
+WHERE ID = 3;
+
+
+
+
+-------------------------------------- RF6: Una versión simple de la operación de retirar oferta de alojamiento: cuando no hay ninguna reserva para dicha oferta-------
+
+
+-- ST1: Dar OPERADOR de acuerdo a ID y contrasenia
+SELECT * FROM OPERADOR WHERE ID = 2 AND CLAVE = '34gMBU';
+
+
+-- ST2: Dar ALOJAMIENTO de acuerdo a ID y OPERADOR
+SELECT * FROM ALOJAMIENTO WHERE ID = 1 AND OPERADOR = 1;
+
+
+-- ST3: ELIMINAR DE SERVICIO PUBLICO  ALOJAMIENTOS SIN RESERVAS
+DELETE FROM SERVICIOPUBLICO WHERE alojamiento = 4 AND alojamiento NOT IN (select alojamiento from RESERVA);
+
+
+-- ST4: ELIMINAR DE SERVICIO  ALOJAMIENTOS SIN RESERVAS
+DELETE FROM SERVICIO WHERE alojamiento = 7 AND alojamiento NOT IN (select alojamiento from RESERVA);
+
+
+-- ST5: ELIMINAR DE TABLA ALOJAMIENTO
+DELETE FROM ALOJAMIENTO WHERE ID = 3 AND ID NOT IN (SELECT ALOJAMIENTO FROM RESERVA);
+
+
+
+-------------------------------------- RF7: REGISTRAR RESERVA COLECTIVA----------------------------------------------------
+
+-- reutilizamos el RF4
+
+-- reserva colectiva
+INSERT INTO RESERVA (ID, FECHAINICIO, FECHAFINAL, ALOJAMIENTO, CLIENTE, CONTRATO,PRECIO,CANTIDADPERSONAS,RESERVAMADRE) 
+values (1000, to_date('2023-06-01','yyyy-mm-dd'), to_date('2023-08-01','yyyy-mm-dd'), null, 1, null, 0, 0,1000);
+
+-- subreservas de la colectiva
+INSERT INTO RESERVA (ID, FECHAINICIO, FECHAFINAL, ALOJAMIENTO, CLIENTE, CONTRATO,PRECIO,CANTIDADPERSONAS,RESERVAMADRE) 
+values (1001, to_date('2023-06-01','yyyy-mm-dd'), to_date('2023-08-01','yyyy-mm-dd'), 7, 1, null, 100000, 1,1000);
+INSERT INTO RESERVA (ID, FECHAINICIO, FECHAFINAL, ALOJAMIENTO, CLIENTE, CONTRATO,PRECIO,CANTIDADPERSONAS,RESERVAMADRE) 
+values (1002, to_date('2023-06-01','yyyy-mm-dd'), to_date('2023-08-01','yyyy-mm-dd'), 10, 1, null, 300000, 2,1000);
+
+
+
+-------------------------------------- RF8: CANCELAR RESERVA COLECTIVA----------------------------------------------------
+
+-- reutilizamos el RF5
+
+UPDATE RESERVA SET FECHACANCELACION = TO_DATE('2023-05-10', 'YYYY-MM-DD') WHERE RESERVAMADRE = 1000;
+UPDATE RESERVA SET PRECIO = PRECIO*0.1 WHERE ID = 1001;
+UPDATE RESERVA SET PRECIO = PRECIO*0.1 WHERE ID = 1002;
+
+
+
+-------------------------------------- RF9: DESHABILITAR OFERTA DE ALOJAMIENTO----------------------------------------------------
+
+-- deshablitar idAlojamiento=3
+
+UPDATE ALOJAMIENTO SET ACTIVO = 0 WHERE ID = 3;
+
+-- en caso de haber colectivas y subreservas
+UPDATE RESERVA SET FECHACANCELACION = '2023-05-09' 
+WHERE RESERVAMADRE = 3 AND ID IN (SELECT RESERVA.ID FROM Reserva where reserva.alojamiento = 3 and fechafinal > TO_DATE('2023-05-09', 'YYYY-MM-DD'));
+
+UPDATE RESERVA SET RESERVAMADRE = NULL WHERE RESERVAMADRE != ID
+				AND ID IN (SELECT RESERVA.ID FROM Reserva where reserva.alojamiento = 3 
+					and fechafinal > TO_DATE('2023-05-09', 'YYYY-MM-DD'));
+
+-- luego se vuelve a usar el RF4 y RF5
+
+insert into RESERVA (ID, FECHACANCELACION, FECHAINICIO, FECHAFINAL, ALOJAMIENTO, CLIENTE, CONTRATO, PRECIO, CANTIDADPERSONAS, RESERVAMADRE) 
+values (13, null, to_date('2024-06-01', 'yyyy-mm-dd'), to_date('2024-08-01', 'yyyy-mm-dd'), 5, 2, null, 1365758.4, 1, null);
+insert into RESERVA (ID, FECHACANCELACION, FECHAINICIO, FECHAFINAL, ALOJAMIENTO, CLIENTE, CONTRATO, PRECIO, CANTIDADPERSONAS, RESERVAMADRE) 
+values (14, null, to_date('2023-04-01', 'yyyy-mm-dd'), to_date('2023-06-01', 'yyyy-mm-dd'), 5, 2, null, 1052932.6, 1, null);
+
+UPDATE RESERVA SET FECHACANCELACION = TO_DATE('2023-05-09', 'YYYY-MM-DD') WHERE ID = 11;
+UPDATE RESERVA SET FECHACANCELACION = TO_DATE('2023-05-09', 'YYYY-MM-DD') WHERE ID = 12;
+
+
+-------------------------------------- RF10: REHABILITAR OFERTA DE ALOJAMIENTO----------------------------------------------------
+
+UPDATE ALOJAMIENTO SET ACTIVO = 1 WHERE ID = 3;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+-- RFC1 - MOSTRAR EL DINERO RECIBIDO POR CADA PROVEEDOR DE ALOJAMIENTO 
+-- DURANTE EL AÑO ACTUAL Y EL AÑO CORRIDO
+
+
+SELECT INGRESOPORANIOACTUAL, INGRESOPORANIOCORRIDO FROM Operador;
+
+
+
+
+------------------------------------------------------------RFC2: MOSTRAR LAS 20 OFERTAS MÁS POPULARES-----------------------------------------------------------------
+
+
+--ST1: TOP 20
+SELECT ALOJAMIENTO, count(ALOJAMIENTO) FROM RESERVA GROUP BY ALOJAMIENTO ORDER BY count(ALOJAMIENTO) desc FETCH FIRST 20 ROWS ONLY;
+
+
+--ST2: DAR ALOJ DE ACUERDO AL ID
+SELECT * FROM ALOJAMIENTO WHERE ID = 2;
+
+
+
+
+-- RFC3 - MOSTRAR EL ÍNDICE DE OCUPACIÓN DE CADA UNA DE LAS 
+-- OFERTAS DE ALOJAMIENTO REGISTRADAS
+
+
+SELECT INDICEOCUPACION FROM Alojamiento;
+
+
+-------------------------------------------------------RFC4: MOSTRAR LOS ALOJAMIENTOS DISPONIBLES EN UN RANGO DE FECHAS, QUE CUMPLEN CON UN CONJUNTO DE REQUERIMIENTOS DE DOTACIÓN O SERVICIOS. POR EJEMPLO, COCINETA, TV CABLE, INTERNET, SALA.----------------------------------------------------------------------------------------------
+
+
+--ST1: MOSTRAR ALOJ DISPONIBLES EN UN RANGO DE FECHAS PARA EL 8 
+SELECT q2.id
+FROM
+(
+-- tuplas con los servicios 
+WITH servicios_deseados AS (
+    SELECT *
+    FROM SERVICIO
+    WHERE TIPO IN (8) 
+),
+-- cuantos servicios deseados tiene cada alojamiento
+conteo_servicios_alojamiento AS (
+    SELECT ALOJAMIENTO, COUNT(*) as total_servicios_alojamiento
+    FROM servicios_deseados
+    GROUP BY ALOJAMIENTO)
+SELECT *
+FROM ALOJAMIENTO a
+JOIN conteo_servicios_alojamiento b ON a.id = b.ALOJAMIENTO
+WHERE b.total_servicios_alojamiento = 1
+) q1
+JOIN 
+(
+SELECT ALOJAMIENTO.ID FROM alojamiento WHERE ID NOT IN 
+(
+  SELECT reserva.alojamiento FROM reserva 
+  WHERE FECHAINICIO >= TO_DATE('2021-11-29', 'YYYY-MM-DD') 
+  AND FECHAFINAL <= TO_DATE('2022-08-31', 'YYYY-MM-DD')
+) order by ALOJAMIENTO.ID
+) q2
+ON q1.ALOJAMIENTO = q2.ID;
+
+
+-- ST2: Dar alojamiento de acuerdo a ID
+SELECT * FROM ALOJAMIENTO WHERE ID = 5;
+
+
+
+-------------------------------------------------------RFC5: MOSTRAR EL USO DE ALOHANDES PARA CADA TIPO DE USUARIO DE LA COMUNIDAD----------------------------------------------------------------------------------------------
+
+select reserva.* from reserva inner join cliente
+on reserva.cliente = cliente.cedula
+where vinculacion = 2;
+
+
+
+-------------------------------------------------------RFC6: MOSTRAR EL USO DE ALOHANDES PARA UN USUARIO DADO (NÚMERO DE NOCHES O MESES CONTRATADOS, CARACTERÍSTICAS DEL ALOJAMIENTO UTILIZADO, DINERO PAGADO----------------------------------------------------------------------------------------------
+
+select reserva.alojamiento,alojamiento.ubicacion,alojamiento.amoblado, reserva.precio,
+reserva.cantidadpersonas,reserva.fechainicio, reserva.fechafinal, 
+fechafinal - fechainicio as totaldias from reserva
+inner join alojamiento on 
+reserva.alojamiento = alojamiento.id
+where fechacancelacion IS NULL
+and cliente = 4;
+
+
+-------------------------------------------------------RFC7: ANALIZAR LA OPERACIÓN DE ALOHANDES----------------------------------------------------------------------------------------------
+
+SELECT RESERVA.* FROM RESERVA
+inner join Alojamiento
+on reserva.alojamiento = alojamiento.id
+where alojamiento.tipo = 1 and (reserva.reservamadre is null or reserva.id != reserva.reservamadre);
+
+SELECT RESERVA.* FROM RESERVA
+inner join ALOJAMIENTO
+on reserva.alojamiento = alojamiento.id
+where alojamiento.tipo = 1 and (reserva.reservamadre is null or reserva.id = reserva.reservamadre);
+
+-- Nota: principalmente se utilizo logica de aplicacion para lograr este requerimiento
+
+
+-------------------------------------------------------RFC8: ENCONTRAR LOS CLIENTES FRECUENTES----------------------------------------------------------------------------------------------
+
+SELECT DISTINCT cliente.*
+FROM (
+    SELECT reserva.cliente
+    FROM reserva
+    WHERE fechafinal - fechainicio > 15
+    AND fechacancelacion IS NULL
+    AND reserva.alojamiento = 8
+    UNION
+    SELECT reserva.cliente
+    FROM reserva
+    WHERE reserva.alojamiento = 8
+    GROUP BY reserva.cliente
+    HAVING COUNT(reserva.cliente) > 3
+) subquery
+INNER JOIN CLIENTE
+ON subquery.cliente= cliente.cedula;
+
+
+-------------------------------------------------------RFC9: ENCONTRAR LAS OFERTAS DE ALOJAMIENTO QUE NO TIENEN MUCHA DEMANDA----------------------------------------------------------------------------------------------
+
+-- darAlojamientos
+SELECT * FROM ALOJAMIENTO;
+
+-- darReservasPorAlojamiento
+SELECT RESERVA.* FROM RESERVA
+where reserva.alojamiento = 8
+and reserva.fechacancelacion is null
+order by fechainicio;
+
+-- darUltimaFechaReservasPorAlojamiento
+select max(fechafinal) from RESERVA
+WHERE FECHACANCELACION IS NULL AND reserva.alojamiento = 8;
+
+
+
+-RF10
+--CASO ADMIN: EXITO
+SELECT reserva.cliente AS CEDULA, COUNT(reserva.alojamiento) as NUMRESERVAS, CLIENTE.NOMBRE,CLIENTE.VINCULACION, CLIENTE.CORREO
+FROM reserva 
+INNER JOIN CLIENTE ON reserva.cliente = cliente.cedula
+WHERE FECHAINICIO between to_date('2020-05-20','yyyy-mm-dd') and to_date('2024-05-20','yyyy-mm-dd')
+AND FECHACANCELACION IS NULL
+AND ALOJAMIENTO = 4156
+GROUP BY reserva.cliente, CLIENTE.NOMBRE,CLIENTE.VINCULACION, CLIENTE.CORREO
+HAVING COUNT(reserva.cliente) >= 1
+ORDER BY CEDULA;
+
+--CASO ADMIN: FALLO
+SELECT reserva.cliente AS CEDULA, COUNT(reserva.alojamiento) as NUMRESERVAS, CLIENTE.NOMBRE,CLIENTE.VINCULACION, CLIENTE.CORREO
+FROM reserva 
+INNER JOIN CLIENTE ON reserva.cliente = cliente.cedula
+WHERE FECHAINICIO between to_date('2020-05-20','yyyy-mm-dd') and to_date('2024-05-20','yyyy-mm-dd')
+AND FECHACANCELACION IS NULL
+AND ALOJAMIENTO = 100000
+GROUP BY reserva.cliente, CLIENTE.NOMBRE,CLIENTE.VINCULACION, CLIENTE.CORREO
+HAVING COUNT(reserva.cliente) >= 1
+ORDER BY CEDULA;
+
+--CASO CLIENTE: EXITO
+SELECT * FROM RESERVA
+WHERE CLIENTE = 153698
+AND FECHAINICIO between to_date('2020-07-01','yyyy-mm-dd') and to_date('2026-02-20','yyyy-mm-dd')
+AND FECHACANCELACION IS NULL
+AND ALOJAMIENTO = 5445
+ORDER BY PRECIO;
+
+-- CASO CLIENTE: FALLO
+SELECT * FROM RESERVA
+WHERE CLIENTE = 153698
+AND FECHAINICIO between to_date('2020-07-01','yyyy-mm-dd') and to_date('2026-02-20','yyyy-mm-dd')
+AND FECHACANCELACION IS NULL
+AND ALOJAMIENTO = 1
+ORDER BY PRECIO;
+
+
+
+---------------------- RFC11 ---------------------- 
+
+-- CASO EXITO ADMIN
+
+SELECT cliente.CEDULA AS CEDULA, 0 AS NUMRESERVAS, 
+CLIENTE.NOMBRE, CLIENTE.VINCULACION, CLIENTE.CORREO 
+ FROM CLIENTE 
+ WHERE CLIENTE.CEDULA NOT IN (
+SELECT RESERVA.CLIENTE 
+FROM reserva 
+INNER JOIN CLIENTE ON reserva.cliente = cliente.cedula 
+WHERE FECHAINICIO between to_date('2020-05-20','yyyy-mm-dd') and to_date('2024-05-20','yyyy-mm-dd') 
+AND FECHACANCELACION IS NULL
+AND ALOJAMIENTO = 4156
+GROUP BY reserva.cliente, CLIENTE.NOMBRE,CLIENTE.VINCULACION, CLIENTE.CORREO 
+HAVING COUNT(reserva.cliente) >= 1)
+ORDER BY CLIENTE.CEDULA;
+
+
+
+
+-- RFC12
+
+-- CORRECTO: MEJOR ALOJAMIENTO
+select alojamiento.* from alojamiento where id=(select reserva.alojamiento
+from reserva
+WHERE FECHAINICIO between to_date('2022-01-01','yyyy-mm-dd') and to_date('2022-12-12','yyyy-mm-dd')
+OR FECHAFINAL between to_date('2022-01-01','yyyy-mm-dd') and to_date('2022-10-01','yyyy-mm-dd')
+AND FECHACANCELACION IS NULL
+GROUP BY reserva.alojamiento
+HAVING COUNT(reserva.alojamiento) >= 1
+ORDER BY count(ALOJAMIENTO) desc 
+FETCH FIRST 1 ROWS ONLY);
+
+-- CORRECTO: PEOR ALOJAMIENTO
+select alojamiento.* from alojamiento where id=(select reserva.alojamiento
+from reserva
+WHERE FECHAINICIO between to_date('2022-12-12','yyyy-mm-dd') and to_date('2024-10-01','yyyy-mm-dd')
+OR FECHAFINAL between to_date('2022-09-25','yyyy-mm-dd') and to_date('2022-10-01','yyyy-mm-dd')
+AND FECHACANCELACION IS NULL
+GROUP BY reserva.alojamiento
+HAVING COUNT(reserva.alojamiento) >= 1
+ORDER BY count(ALOJAMIENTO) asc
+FETCH FIRST 1 ROWS ONLY);
+
+
+-- CORRECTO: PEOR OPERADOR
+select operador.* from operador where id in (select a.operador from(
+select reserva.*,alojamiento.operador as operador from reserva
+inner join alojamiento
+on reserva.alojamiento = alojamiento.id
+WHERE FECHAINICIO between to_date('2022-12-12','yyyy-mm-dd') and to_date('2024-10-01','yyyy-mm-dd')
+OR FECHAFINAL between to_date('2022-09-25','yyyy-mm-dd') and to_date('2022-10-01','yyyy-mm-dd')
+OR (FECHAINICIO <to_date('2022-12-12','yyyy-mm-dd') and FECHAFINAL > to_date('2024-10-01','yyyy-mm-dd'))
+AND FECHACANCELACION IS NULL) a
+GROUP BY a.operador
+HAVING COUNT(a.operador) >= 1
+ORDER BY count(a.operador) asc
+FETCH FIRST 3 ROWS ONLY);
+
+-- CORRECTO: MEJOR OPERADOR
+select operador.* from operador where id in (select a.operador from(
+select reserva.*,alojamiento.operador as operador from reserva
+inner join alojamiento
+on reserva.alojamiento = alojamiento.id
+WHERE FECHAINICIO between to_date('2022-12-12','yyyy-mm-dd') and to_date('2024-10-01','yyyy-mm-dd')
+OR FECHAFINAL between to_date('2022-09-25','yyyy-mm-dd') and to_date('2022-10-01','yyyy-mm-dd')
+OR (FECHAINICIO <to_date('2022-12-12','yyyy-mm-dd') and FECHAFINAL > to_date('2024-10-01','yyyy-mm-dd'))
+AND FECHACANCELACION IS NULL) a
+GROUP BY a.operador
+HAVING COUNT(a.operador) >= 1
+ORDER BY count(a.operador) desc
+FETCH FIRST 3 ROWS ONLY);
+
+-- CASO FALLO: MEJOR ALOJAMIENTO
+select alojamiento.* from alojamiento where id=(select reserva.alojamiento
+from reserva
+WHERE FECHAINICIO between to_date('2027-01-01','yyyy-mm-dd') and to_date('2027-12-12','yyyy-mm-dd')
+OR FECHAFINAL between to_date('2027-01-01','yyyy-mm-dd') and to_date('2027-10-01','yyyy-mm-dd')
+AND FECHACANCELACION IS NULL
+GROUP BY reserva.alojamiento
+HAVING COUNT(reserva.alojamiento) >= 1
+ORDER BY count(ALOJAMIENTO) desc 
+FETCH FIRST 1 ROWS ONLY);
+
+-- CASO FALLO: PEOR OPERADOR
+select operador.* from operador where id in (select a.operador from(
+select reserva.*,alojamiento.operador as operador from reserva
+inner join alojamiento
+on reserva.alojamiento = alojamiento.id
+WHERE FECHAINICIO between to_date('2027-12-12','yyyy-mm-dd') and to_date('2027-10-01','yyyy-mm-dd')
+OR FECHAFINAL between to_date('2027-09-25','yyyy-mm-dd') and to_date('2027-10-01','yyyy-mm-dd')
+OR (FECHAINICIO <to_date('2027-12-12','yyyy-mm-dd') and FECHAFINAL > to_date('2027-10-01','yyyy-mm-dd'))
+AND FECHACANCELACION IS NULL) a
+GROUP BY a.operador
+HAVING COUNT(a.operador) >= 1
+ORDER BY count(a.operador) asc
+FETCH FIRST 3 ROWS ONLY);
+
+-- CASO FALLO: MEJOR OPERADOR
+select operador.* from operador where id in (select a.operador from(
+select reserva.*,alojamiento.operador as operador from reserva
+inner join alojamiento
+on reserva.alojamiento = alojamiento.id
+WHERE FECHAINICIO between to_date('2027-12-12','yyyy-mm-dd') and to_date('2027-10-01','yyyy-mm-dd')
+OR FECHAFINAL between to_date('2027-09-25','yyyy-mm-dd') and to_date('2027-10-01','yyyy-mm-dd')
+OR (FECHAINICIO <to_date('2027-12-12','yyyy-mm-dd') and FECHAFINAL > to_date('2027-10-01','yyyy-mm-dd'))
+AND FECHACANCELACION IS NULL) a
+GROUP BY a.operador
+HAVING COUNT(a.operador) >= 1
+ORDER BY count(a.operador) desc
+FETCH FIRST 3 ROWS ONLY);
+
+
+---------------------- RFC13 ---------------------- 
+-- Subconsulta 1
+
+SELECT Cliente.* 
+FROM Cliente
+WHERE Cedula IN (
+SELECT Cliente
+FROM Reserva
+GROUP BY Cliente
+HAVING COUNT(DISTINCT(EXTRACT(MONTH FROM FechaInicio))) >= 1);
+
+-- Subconsulta 2
+
+SELECT Cliente.*
+FROM Cliente
+WHERE Cedula NOT IN (
+SELECT Cliente
+FROM Reserva
+WHERE Precio <= 1500000
+);
+
+-- Subconsulta 3
+
+SELECT Cliente.*
+FROM Cliente
+WHERE Cedula NOT IN (SELECT Reserva.Cliente FROM Reserva
+JOIN Alojamiento ON Reserva.Alojamiento = Alojamiento.ID 
+WHERE Alojamiento.Tipo != '1');
+
+
+

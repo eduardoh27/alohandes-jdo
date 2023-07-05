@@ -1,0 +1,198 @@
+-- POBLAMIENTO DE BASE DE DATOS
+
+insert into TIPOMIEMBROCOMUNIDAD (ID, NOMBRE) values (1, 'Profesor');
+insert into TIPOMIEMBROCOMUNIDAD (ID, NOMBRE) values (2, 'Empleado');
+insert into TIPOMIEMBROCOMUNIDAD (ID, NOMBRE) values (3, 'Egresado');
+insert into TIPOMIEMBROCOMUNIDAD (ID, NOMBRE) values (4, 'Estudiante');
+insert into TIPOMIEMBROCOMUNIDAD (ID, NOMBRE) values (5, 'padreEstudiante');
+
+insert into CLIENTE (CEDULA, CORREO, NOMBRE, CELULAR, VINCULACION, CLAVE) values (1, 'gaburrow0@mysql.com', 'Greggory Aburrow', 3615164114, 1, 'GmPSHFF7');
+insert into CLIENTE (CEDULA, CORREO, NOMBRE, CELULAR, VINCULACION, CLAVE) values (2, 'pshirley1@unc.edu', 'Persis Shirley', 3512378883, 2, 'xHL5SG');
+insert into CLIENTE (CEDULA, CORREO, NOMBRE, CELULAR, VINCULACION, CLAVE) values (3, 'cwheelband2@bravesites.com', 'Chevalier Wheelband', 3306041745, 2, 'QN9A3epCdp6t');
+insert into CLIENTE (CEDULA, CORREO, NOMBRE, CELULAR, VINCULACION, CLAVE) values (4, 'pmoon3@comcast.net', 'Patton Moon', 3770140476, 5, 'XPZYL1iwSNf');
+insert into CLIENTE (CEDULA, CORREO, NOMBRE, CELULAR, VINCULACION, CLAVE) values (5, 'kdrayson4@acquirethisname.com', 'Kaycee Drayson', 3656597792, 1, 'GLY4McH');
+insert into CLIENTE (CEDULA, CORREO, NOMBRE, CELULAR, VINCULACION, CLAVE) values (6, 'hwalework5@ebay.co.uk', 'Hermie Walework', 3086427078, 2, 'NPOydZ');
+insert into CLIENTE (CEDULA, CORREO, NOMBRE, CELULAR, VINCULACION, CLAVE) values (7, 'gennals6@goodreads.com', 'Gretna Ennals', 3155851566, 1, '9Jg4cYp');
+insert into CLIENTE (CEDULA, CORREO, NOMBRE, CELULAR, VINCULACION, CLAVE) values (8, 'lcamm7@time.com', 'Lawrence Camm', 3136439058, 4, '3ry0irLc9W6');
+insert into CLIENTE (CEDULA, CORREO, NOMBRE, CELULAR, VINCULACION, CLAVE) values (9, 'mbelitz8@woothemes.com', 'Matty Belitz', 3850999717, 2, 'vyx33Fa');
+insert into CLIENTE (CEDULA, CORREO, NOMBRE, CELULAR, VINCULACION, CLAVE) values (10, 'jmerryweather9@1und1.de', 'Jackson Merryweather', 3815499187, 3, 'ODqF3YUi');
+
+insert into OPERADOR (ID, INGRESOPORANIOACTUAL, INGRESOPORANIOCORRIDO, NOMBRE, CLAVE,CORREO) values (1, 6611170.0, 8740869.0, 'Yule Roslen', 'MRtQFKEEl0CK','corr223eo1');
+insert into OPERADOR (ID, INGRESOPORANIOACTUAL, INGRESOPORANIOCORRIDO, NOMBRE, CLAVE,CORREO) values (2, 8149244.47, 835138.45, 'Niles Errichiello', '34gMBU','corr32eo2');
+insert into OPERADOR (ID, INGRESOPORANIOACTUAL, INGRESOPORANIOCORRIDO, NOMBRE, CLAVE,CORREO) values (3, 9692477.0, 9419125.0, 'Nydia Cleugh', '6qSmGrdcakc','corre66o3');
+insert into OPERADOR (ID, INGRESOPORANIOACTUAL, INGRESOPORANIOCORRIDO, NOMBRE, CLAVE,CORREO) values (4, 8635982.0, 3392379.53, 'Sol Folca', 'rbcvMV','corr4554eo1');
+insert into OPERADOR (ID, INGRESOPORANIOACTUAL, INGRESOPORANIOCORRIDO, NOMBRE, CLAVE,CORREO) values (5, 5515703.16, 3198499.0, 'Joy Blanche', 'qHQJqZn4D','corr22eo1');
+insert into OPERADOR (ID, INGRESOPORANIOACTUAL, INGRESOPORANIOCORRIDO, NOMBRE, CLAVE,CORREO) values (6, null, null, 'Floria Giovanazzi', 'Lhskxkp4','corre5434o1');
+insert into OPERADOR (ID, INGRESOPORANIOACTUAL, INGRESOPORANIOCORRIDO, NOMBRE, CLAVE,CORREO) values (7, 6397300.0, 6503007.0, 'Kerwinn Shevell', 'rqK7wwIsCT','corr4543eo1');
+insert into OPERADOR (ID, INGRESOPORANIOACTUAL, INGRESOPORANIOCORRIDO, NOMBRE, CLAVE,CORREO) values (8, 1642365.0, 5740883.0, 'Sophi Virgo', 'bUsrsh5','correo45341');
+insert into OPERADOR (ID, INGRESOPORANIOACTUAL, INGRESOPORANIOCORRIDO, NOMBRE, CLAVE,CORREO) values (9, null, null, 'Nelli Pyrton', 'PA5mXUcE6e','correo15454');
+insert into OPERADOR (ID, INGRESOPORANIOACTUAL, INGRESOPORANIOCORRIDO, NOMBRE, CLAVE,CORREO) values (10, null, null, 'Elizabet Congrave', 'XvGtBYRs','correo10');
+
+insert into TIPOOPERADOREMPRESA (ID, NOMBRE) values (1, 'Hotel');
+insert into TIPOOPERADOREMPRESA (ID, NOMBRE) values (2, 'Hostal');
+insert into TIPOOPERADOREMPRESA (ID, NOMBRE) values (3, 'ViviendaUniversitaria');
+
+insert into EMPRESA (NIT, UBICACION, RECEPCION, REGISTROTURISMO, REGISTROCAMARA, NUMEROCONTACTO, TIPO) values (1, '7 Columbus Plaza', 1, 415732996, 262953035, 3575586539, 1);
+insert into EMPRESA (NIT, UBICACION, RECEPCION, REGISTROTURISMO, REGISTROCAMARA, NUMEROCONTACTO, TIPO) values (2, '3 Columbus Court', 0, 738607695, 407720156, 3951890772, 2);
+insert into EMPRESA (NIT, UBICACION, RECEPCION, REGISTROTURISMO, REGISTROCAMARA, NUMEROCONTACTO, TIPO) values (3, '1 Linden Point', 0, 383332131, 384572277, 3494516477, 3);
+insert into EMPRESA (NIT, UBICACION, RECEPCION, REGISTROTURISMO, REGISTROCAMARA, NUMEROCONTACTO, TIPO) values (4, '05005 Hagan Road', 0, 917867106, 924433053, 3953706626, 3);
+insert into EMPRESA (NIT, UBICACION, RECEPCION, REGISTROTURISMO, REGISTROCAMARA, NUMEROCONTACTO, TIPO) values (5, '7217 Commercial Trail', 0, 399454887, 510680742, 3089311973, 1);
+
+insert into TIPOOPERADORNATURAL (ID, NOMBRE) values (1, 'Vecino');
+insert into TIPOOPERADORNATURAL (ID, NOMBRE) values (2, 'PersonaNatural');
+insert into TIPOOPERADORNATURAL (ID, NOMBRE) values (3, 'miembroComunidad');
+
+insert into PERSONANATURAL (CEDULA,  CELULAR, TIPO) values (6,  3774680631, 3);
+insert into PERSONANATURAL (CEDULA, CELULAR, TIPO) values (7,  3296144508, 2);
+insert into PERSONANATURAL (CEDULA,  CELULAR, TIPO) values (8,  3420349283, 1);
+insert into PERSONANATURAL (CEDULA,  CELULAR, TIPO) values (9,  3809675705, 3);
+insert into PERSONANATURAL (CEDULA,  CELULAR, TIPO) values (10, 3830000979, 1);
+
+insert into CONTRATO (ID, INTERNET, ADMINISTRACION, SERVICIOSPUBLICOS, TV) values (1, 1, 1, 1, 0);
+insert into CONTRATO (ID, INTERNET, ADMINISTRACION, SERVICIOSPUBLICOS, TV) values (2, 0, 1, 0, 0);
+insert into CONTRATO (ID, INTERNET, ADMINISTRACION, SERVICIOSPUBLICOS, TV) values (3, 0, 0, 1, 0);
+insert into CONTRATO (ID, INTERNET, ADMINISTRACION, SERVICIOSPUBLICOS, TV) values (4, 0, 1, 0, 0);
+insert into CONTRATO (ID, INTERNET, ADMINISTRACION, SERVICIOSPUBLICOS, TV) values (5, 0, 0, 1, 0);
+insert into CONTRATO (ID, INTERNET, ADMINISTRACION, SERVICIOSPUBLICOS, TV) values (6, 0, 0, 0, 0);
+insert into CONTRATO (ID, INTERNET, ADMINISTRACION, SERVICIOSPUBLICOS, TV) values (7, 0, 0, 1, 0);
+insert into CONTRATO (ID, INTERNET, ADMINISTRACION, SERVICIOSPUBLICOS, TV) values (8, 1, 0, 1, 0);
+insert into CONTRATO (ID, INTERNET, ADMINISTRACION, SERVICIOSPUBLICOS, TV) values (9, 0, 1, 1, 0);
+insert into CONTRATO (ID, INTERNET, ADMINISTRACION, SERVICIOSPUBLICOS, TV) values (10, 0, 0, 0, 0);
+
+insert into SEGURO (ID, NOMBREEMPRESA, MODALIDAD, CODEUDOR, VALORARRIENDO, DURACION) values (1, 'Chatterbridge', 'digital', 0, 9202664.0, 6);
+insert into SEGURO (ID, NOMBREEMPRESA, MODALIDAD, CODEUDOR, VALORARRIENDO, DURACION) values (2, 'Feedmix', 'presencial', 0, 1410842.0, 12);
+insert into SEGURO (ID, NOMBREEMPRESA, MODALIDAD, CODEUDOR, VALORARRIENDO, DURACION) values (3, 'Rhyloo', 'presencial', 0, 8626856.0, 12);
+insert into SEGURO (ID, NOMBREEMPRESA, MODALIDAD, CODEUDOR, VALORARRIENDO, DURACION) values (4, 'Camido', 'digital', 1, 8006449.0, 12);
+insert into SEGURO (ID, NOMBREEMPRESA, MODALIDAD, CODEUDOR, VALORARRIENDO, DURACION) values (5, 'Zazio', 'presencial', 0, 6753059.0, 3);
+insert into SEGURO (ID, NOMBREEMPRESA, MODALIDAD, CODEUDOR, VALORARRIENDO, DURACION) values (6, 'Zoomcast', 'presencial', 0, 1910018.0, 3);
+insert into SEGURO (ID, NOMBREEMPRESA, MODALIDAD, CODEUDOR, VALORARRIENDO, DURACION) values (7, 'Brainsphere', 'presencial', 1, 7897891.7, 12);
+insert into SEGURO (ID, NOMBREEMPRESA, MODALIDAD, CODEUDOR, VALORARRIENDO, DURACION) values (8, 'Babbleset', 'presencial', 1, 9591467.0, 3);
+insert into SEGURO (ID, NOMBREEMPRESA, MODALIDAD, CODEUDOR, VALORARRIENDO, DURACION) values (9, 'Oodoo', 'digital', 0, 2646187.0, 12);
+insert into SEGURO (ID, NOMBREEMPRESA, MODALIDAD, CODEUDOR, VALORARRIENDO, DURACION) values (10, 'Flipopia', 'presencial', 0, 233236.6, 12);
+
+-- 10. Horario
+
+insert into HORARIO (ID, HORAAPERTURA, HORACIERRE) values (1, to_date('2022-11-13 18:09:53', 'yyyy-mm-dd hh24-mi-ss'), to_date('2022-11-14 0:10:47', 'yyyy-mm-dd hh24-mi-ss'));
+insert into HORARIO (ID, HORAAPERTURA, HORACIERRE) values (2, to_date('2022-03-31 21:42:03', 'yyyy-mm-dd hh24-mi-ss'), to_date('2022-04-27 22:40:21', 'yyyy-mm-dd hh24-mi-ss'));
+insert into HORARIO (ID, HORAAPERTURA, HORACIERRE) values (3, to_date('2022-05-11 17:36:34', 'yyyy-mm-dd hh24-mi-ss'), to_date('2022-09-15 7:26:50', 'yyyy-mm-dd hh24-mi-ss'));
+insert into HORARIO (ID, HORAAPERTURA, HORACIERRE) values (4, to_date('2023-01-13 16:57:21', 'yyyy-mm-dd hh24-mi-ss'), to_date('2023-03-17 2:06:50', 'yyyy-mm-dd hh24-mi-ss'));
+insert into HORARIO (ID, HORAAPERTURA, HORACIERRE) values (5, to_date('2023-01-07 11:14:36', 'yyyy-mm-dd hh24-mi-ss'), to_date('2022-12-27 23:02:04', 'yyyy-mm-dd hh24-mi-ss'));
+insert into HORARIO (ID, HORAAPERTURA, HORACIERRE) values (6, to_date('2022-10-21 10:33:31', 'yyyy-mm-dd hh24-mi-ss'), to_date('2022-08-17 17:23:07', 'yyyy-mm-dd hh24-mi-ss'));
+insert into HORARIO (ID, HORAAPERTURA, HORACIERRE) values (7, to_date('2022-07-23 14:11:40', 'yyyy-mm-dd hh24-mi-ss'), to_date('2022-05-18 1:36:17', 'yyyy-mm-dd hh24-mi-ss'));
+insert into HORARIO (ID, HORAAPERTURA, HORACIERRE) values (8, to_date('2022-07-24 5:49:22', 'yyyy-mm-dd hh24-mi-ss'), to_date('2022-11-15 2:22:20', 'yyyy-mm-dd hh24-mi-ss'));
+insert into HORARIO (ID, HORAAPERTURA, HORACIERRE) values (9, to_date('2022-10-24 23:36:40', 'yyyy-mm-dd hh24-mi-ss'), to_date('2022-11-30 23:06:15', 'yyyy-mm-dd hh24-mi-ss'));
+insert into HORARIO (ID, HORAAPERTURA, HORACIERRE) values (10, to_date('2022-06-30 22:47:53', 'yyyy-mm-dd hh24-mi-ss'), to_date('2022-03-23 23:55:46', 'yyyy-mm-dd hh24-mi-ss'));
+
+-- 11. TipoAlojamiento
+
+insert into TIPOALOJAMIENTO (ID, NOMBRE, TIPOPAGO) values (1, 'hotelSuite', 'dia');
+insert into TIPOALOJAMIENTO (ID, NOMBRE, TIPOPAGO) values (2, 'hotelSemisuit', 'dia');
+insert into TIPOALOJAMIENTO (ID, NOMBRE, TIPOPAGO) values (3, 'hotelEstandar', 'dia');
+insert into TIPOALOJAMIENTO (ID, NOMBRE, TIPOPAGO) values (4, 'habitacionHostal', 'dia');
+insert into TIPOALOJAMIENTO (ID, NOMBRE, TIPOPAGO) values (5, 'habitacionVivienda', 'mes');
+insert into TIPOALOJAMIENTO (ID, NOMBRE, TIPOPAGO) values (6, 'apartamento', 'mes');
+insert into TIPOALOJAMIENTO (ID, NOMBRE, TIPOPAGO) values (7, 'vivienda', 'dia');
+insert into TIPOALOJAMIENTO (ID, NOMBRE, TIPOPAGO) values (8, 'habitacionResidencia', 'mes');
+
+
+-- 12. Alojamiento
+insert into ALOJAMIENTO (ID, NUMHABITACIONES, UBICACION, PRECIO, AMOBLADO, CAPACIDAD, COMPARTIDO, INDICEOCUPACION, TIPO, HORARIO, SEGURO,OPERADOR, ACTIVO) values (1, 18, '71074 Lyons Parkway', 1329228.6, 1, 4, 1, 50, 4, 10, 9, 1, 1);
+insert into ALOJAMIENTO (ID, NUMHABITACIONES, UBICACION, PRECIO, AMOBLADO, CAPACIDAD, COMPARTIDO, INDICEOCUPACION, TIPO, HORARIO, SEGURO,OPERADOR, ACTIVO) values (2, 5, '18 Dunning Drive', 1646894.0, 0, 4, 0, 50, 4, 7, 6,4, 1);
+insert into ALOJAMIENTO (ID, NUMHABITACIONES, UBICACION, PRECIO, AMOBLADO, CAPACIDAD, COMPARTIDO, INDICEOCUPACION, TIPO, HORARIO, SEGURO,OPERADOR, ACTIVO) values (3, 17, '62 Carioca Junction', 854126.8, 0, 4, 0, 50, 5, 10, 9,3, 1);
+insert into ALOJAMIENTO (ID, NUMHABITACIONES, UBICACION, PRECIO, AMOBLADO, CAPACIDAD, COMPARTIDO, INDICEOCUPACION, TIPO, HORARIO, SEGURO,OPERADOR, ACTIVO) values (4, 17, '8 Buell Trail', 5386667.9, 1, 4, 1, 50, 1, 2, 4,6, 1);
+insert into ALOJAMIENTO (ID, NUMHABITACIONES, UBICACION, PRECIO, AMOBLADO, CAPACIDAD, COMPARTIDO, INDICEOCUPACION, TIPO, HORARIO, SEGURO,OPERADOR, ACTIVO) values (5, 16, '0056 Hanover Crossing', 3994171.9, 0, 4, 1, 50, 5, 7, 5,4, 1);
+insert into ALOJAMIENTO (ID, NUMHABITACIONES, UBICACION, PRECIO, AMOBLADO, CAPACIDAD, COMPARTIDO, INDICEOCUPACION, TIPO, HORARIO, SEGURO,OPERADOR, ACTIVO) values (6, 8, '224 Harbort Trail', 4027126.9, 0, 4, 0, 50, 4, 10, 10,1, 1);
+insert into ALOJAMIENTO (ID, NUMHABITACIONES, UBICACION, PRECIO, AMOBLADO, CAPACIDAD, COMPARTIDO, INDICEOCUPACION, TIPO, HORARIO, SEGURO,OPERADOR, ACTIVO) values (7, 3, '70867 Chinook Parkway', 9679071.0, 0, 4, 0, 50, 3, 9, 1,7, 1);
+insert into ALOJAMIENTO (ID, NUMHABITACIONES, UBICACION, PRECIO, AMOBLADO, CAPACIDAD, COMPARTIDO, INDICEOCUPACION, TIPO, HORARIO, SEGURO,OPERADOR, ACTIVO) values (8, 12, '5 Johnson Way', 8223543.0, 0, 4, 0, 50, 1, 3, 3,9, 1);
+insert into ALOJAMIENTO (ID, NUMHABITACIONES, UBICACION, PRECIO, AMOBLADO, CAPACIDAD, COMPARTIDO, INDICEOCUPACION, TIPO, HORARIO, SEGURO,OPERADOR, ACTIVO) values (9, 11, '2 Quincy Street', 8160659.5, 0, 4, 0, 50, 1, 10, 7,5, 1);
+insert into ALOJAMIENTO (ID, NUMHABITACIONES, UBICACION, PRECIO, AMOBLADO, CAPACIDAD, COMPARTIDO, INDICEOCUPACION, TIPO, HORARIO, SEGURO,OPERADOR, ACTIVO) values (10, 3, '0138 Linden Drive', 3826016.6, 0, 4, 0, 50, 3, 3, 1,2, 1);
+insert into ALOJAMIENTO (ID, NUMHABITACIONES, UBICACION, PRECIO, AMOBLADO, CAPACIDAD, COMPARTIDO, INDICEOCUPACION, TIPO, HORARIO, SEGURO,OPERADOR, ACTIVO) values (11, 3, '0138 Linden Drive', 3826016.6, 0, 4, 0, 50, 4, 10, 1,2, 1);
+insert into ALOJAMIENTO (ID, NUMHABITACIONES, UBICACION, PRECIO, AMOBLADO, CAPACIDAD, COMPARTIDO, INDICEOCUPACION, TIPO, HORARIO, SEGURO,OPERADOR, ACTIVO) values (12, 3, '0138 Linden Drive', 3826016.6, 0, 4, 0, 50, 4, 10, 1,3, 1);
+
+-- 13. Reserva
+
+insert into RESERVA (ID, FECHACANCELACION, FECHAINICIO, FECHAFINAL, ALOJAMIENTO, CLIENTE, CONTRATO, PRECIO, CANTIDADPERSONAS, RESERVAMADRE) values (1, to_date('2022-06-03', 'yyyy-mm-dd'), to_date('2022-03-17', 'yyyy-mm-dd'), to_date('2022-06-07', 'yyyy-mm-dd'), 2, 4, 1, 3365758.4, 1, null);
+insert into RESERVA (ID, FECHACANCELACION, FECHAINICIO, FECHAFINAL, ALOJAMIENTO, CLIENTE, CONTRATO, PRECIO, CANTIDADPERSONAS, RESERVAMADRE) values (2, null, to_date('2021-04-22', 'yyyy-mm-dd'), to_date('2023-02-19', 'yyyy-mm-dd'), 3, 5, 3, 3052932.6, 1, null);
+insert into RESERVA (ID, FECHACANCELACION, FECHAINICIO, FECHAFINAL, ALOJAMIENTO, CLIENTE, CONTRATO, PRECIO, CANTIDADPERSONAS, RESERVAMADRE) values (3, to_date('2022-09-23', 'yyyy-mm-dd'), to_date('2021-07-26', 'yyyy-mm-dd'), to_date('2022-12-23', 'yyyy-mm-dd'), 1, 8, 10, 5524267.0, 1, null);
+insert into RESERVA (ID, FECHACANCELACION, FECHAINICIO, FECHAFINAL, ALOJAMIENTO, CLIENTE, CONTRATO, PRECIO, CANTIDADPERSONAS, RESERVAMADRE) values (4, to_date('2022-06-12', 'yyyy-mm-dd'), to_date('2021-03-19', 'yyyy-mm-dd'), to_date('2022-08-12', 'yyyy-mm-dd'), 9, 8, null, 5627346.4, 1, null);
+insert into RESERVA (ID, FECHACANCELACION, FECHAINICIO, FECHAFINAL, ALOJAMIENTO, CLIENTE, CONTRATO, PRECIO, CANTIDADPERSONAS, RESERVAMADRE) values (5, null, to_date('2021-03-20', 'yyyy-mm-dd'), to_date('2022-09-26', 'yyyy-mm-dd'), 10, 6, 3, 7067208.0, 1, null);
+insert into RESERVA (ID, FECHACANCELACION, FECHAINICIO, FECHAFINAL, ALOJAMIENTO, CLIENTE, CONTRATO, PRECIO, CANTIDADPERSONAS, RESERVAMADRE) values (6, null, to_date('2022-02-27', 'yyyy-mm-dd'), to_date('2022-09-07', 'yyyy-mm-dd'), 8, 7, 8, 6100698.6, 1, null);
+insert into RESERVA (ID, FECHACANCELACION, FECHAINICIO, FECHAFINAL, ALOJAMIENTO, CLIENTE, CONTRATO, PRECIO, CANTIDADPERSONAS, RESERVAMADRE) values (7, to_date('2022-11-20', 'yyyy-mm-dd'), to_date('2021-08-31', 'yyyy-mm-dd'), to_date('2022-12-15', 'yyyy-mm-dd'), 5, 3, 9, 4000931.8, 1, null);
+insert into RESERVA (ID, FECHACANCELACION, FECHAINICIO, FECHAFINAL, ALOJAMIENTO, CLIENTE, CONTRATO, PRECIO, CANTIDADPERSONAS, RESERVAMADRE) values (8, null, to_date('2021-07-31', 'yyyy-mm-dd'), to_date('2022-07-08', 'yyyy-mm-dd'), 8, 4, null, 4975193.0, 1, null);
+insert into RESERVA (ID, FECHACANCELACION, FECHAINICIO, FECHAFINAL, ALOJAMIENTO, CLIENTE, CONTRATO, PRECIO, CANTIDADPERSONAS, RESERVAMADRE) values (9, null, to_date('2022-02-16', 'yyyy-mm-dd'), to_date('2022-08-12', 'yyyy-mm-dd'), 1, 6, 7, 152258.3, 1, null);
+insert into RESERVA (ID, FECHACANCELACION, FECHAINICIO, FECHAFINAL, ALOJAMIENTO, CLIENTE, CONTRATO, PRECIO, CANTIDADPERSONAS, RESERVAMADRE) values (10, null, to_date('2021-11-29', 'yyyy-mm-dd'), to_date('2022-08-31', 'yyyy-mm-dd'), 6, 3, 1, 4458495.0, 1, null);
+insert into RESERVA (ID, FECHACANCELACION, FECHAINICIO, FECHAFINAL, ALOJAMIENTO, CLIENTE, CONTRATO, PRECIO, CANTIDADPERSONAS, RESERVAMADRE) values (11, null, to_date('2024-06-01', 'yyyy-mm-dd'), to_date('2024-08-01', 'yyyy-mm-dd'), 3, 2, null, 3365758.4, 1, null);
+insert into RESERVA (ID, FECHACANCELACION, FECHAINICIO, FECHAFINAL, ALOJAMIENTO, CLIENTE, CONTRATO, PRECIO, CANTIDADPERSONAS, RESERVAMADRE) values (12, null, to_date('2023-04-01', 'yyyy-mm-dd'), to_date('2023-06-01', 'yyyy-mm-dd'), 3, 2, null, 3052932.6, 1, null);
+INSERT INTO RESERVA (ID, FECHAINICIO, FECHAFINAL, ALOJAMIENTO, CLIENTE, CONTRATO,PRECIO,CANTIDADPERSONAS,RESERVAMADRE) 
+values (1000, to_date('2023-06-01','yyyy-mm-dd'), to_date('2023-08-01','yyyy-mm-dd'), null, 1, null, 0, 0,1000);
+INSERT INTO RESERVA 
+(ID, FECHAINICIO, FECHAFINAL, ALOJAMIENTO, CLIENTE, CONTRATO,PRECIO,CANTIDADPERSONAS,RESERVAMADRE) 
+values (1001, to_date('2023-06-01','yyyy-mm-dd'), to_date('2023-08-01','yyyy-mm-dd'), 7, 1, null, 100000, 1,1000);
+INSERT INTO RESERVA 
+(ID, FECHAINICIO, FECHAFINAL, ALOJAMIENTO, CLIENTE, CONTRATO,PRECIO,CANTIDADPERSONAS,RESERVAMADRE) 
+values (1002, to_date('2023-06-01','yyyy-mm-dd'), to_date('2023-08-01','yyyy-mm-dd'), 10, 1, null, 300000, 2,1000);
+
+-- 14. TipoServicioPublico
+
+insert into TIPOSERVICIOPUBLICO (ID, NOMBRE) values (1, 'agua');
+insert into TIPOSERVICIOPUBLICO (ID, NOMBRE) values (2, 'luz');
+insert into TIPOSERVICIOPUBLICO (ID, NOMBRE) values (3, 'telefono');
+insert into TIPOSERVICIOPUBLICO (ID, NOMBRE) values (4, 'tvCable');
+insert into TIPOSERVICIOPUBLICO (ID, NOMBRE) values (5, 'internet');
+
+-- 15. ServicioPublico
+
+insert into SERVICIOPUBLICO (ID, COSTO, TIPO, ALOJAMIENTO) values (1, 181232.6, 2, 4);
+insert into SERVICIOPUBLICO (ID, COSTO, TIPO, ALOJAMIENTO) values (2, 315844.1, 5, 3);
+insert into SERVICIOPUBLICO (ID, COSTO, TIPO, ALOJAMIENTO) values (3, 138083.3, 3, 5);
+insert into SERVICIOPUBLICO (ID, COSTO, TIPO, ALOJAMIENTO) values (4, 56310.4, 1, 7);
+insert into SERVICIOPUBLICO (ID, COSTO, TIPO, ALOJAMIENTO) values (5, 451439.6, 3, 5);
+insert into SERVICIOPUBLICO (ID, COSTO, TIPO, ALOJAMIENTO) values (6, 914575.4, 1, 3);
+insert into SERVICIOPUBLICO (ID, COSTO, TIPO, ALOJAMIENTO) values (7, 240262.3, 4, 1);
+insert into SERVICIOPUBLICO (ID, COSTO, TIPO, ALOJAMIENTO) values (8, 56113.4, 5, 4);
+insert into SERVICIOPUBLICO (ID, COSTO, TIPO, ALOJAMIENTO) values (9, 314625.3, 1, 5);
+insert into SERVICIOPUBLICO (ID, COSTO, TIPO, ALOJAMIENTO) values (10, 630604.5, 3, 5);
+
+
+-- 16. TipoServicio
+
+insert into TIPOSERVICIO (ID, NOMBRE) values (1, 'restaurante');
+insert into TIPOSERVICIO (ID, NOMBRE) values (2, 'piscina');
+insert into TIPOSERVICIO (ID, NOMBRE) values (3, 'parqueadero');
+insert into TIPOSERVICIO (ID, NOMBRE) values (4, 'wifi');
+insert into TIPOSERVICIO (ID, NOMBRE) values (5, 'recepcion');
+insert into TIPOSERVICIO (ID, NOMBRE) values (6, 'comida');
+insert into TIPOSERVICIO (ID, NOMBRE) values (7, 'accesoCocina');
+insert into TIPOSERVICIO (ID, NOMBRE) values (8, 'banioPrivado');
+insert into TIPOSERVICIO (ID, NOMBRE) values (9, 'banioCompartido');
+insert into TIPOSERVICIO (ID, NOMBRE) values (10, 'habitacionIndividual');
+insert into TIPOSERVICIO (ID, NOMBRE) values (11, 'habitacionCompartida');
+insert into TIPOSERVICIO (ID, NOMBRE) values (12, 'baniera');
+insert into TIPOSERVICIO (ID, NOMBRE) values (13, 'yacuzzi');
+insert into TIPOSERVICIO (ID, NOMBRE) values (14, 'sala');
+insert into TIPOSERVICIO (ID, NOMBRE) values (15, 'cocineta');
+insert into TIPOSERVICIO (ID, NOMBRE) values (16, 'servicioRestaurante');
+insert into TIPOSERVICIO (ID, NOMBRE) values (17, 'salaEstudio');
+insert into TIPOSERVICIO (ID, NOMBRE) values (18, 'salaEsparcimiento');
+insert into TIPOSERVICIO (ID, NOMBRE) values (19, 'gimnasio');
+
+
+-- 17. Servicio
+
+insert into SERVICIO (ID, TIPO, ALOJAMIENTO) values (1, 15, 3);
+insert into SERVICIO (ID, TIPO, ALOJAMIENTO) values (2, 11, 10);
+insert into SERVICIO (ID, TIPO, ALOJAMIENTO) values (3, 9, 8);
+insert into SERVICIO (ID, TIPO, ALOJAMIENTO) values (4, 12, 6);
+insert into SERVICIO (ID, TIPO, ALOJAMIENTO) values (5, 19, 2);
+insert into SERVICIO (ID, TIPO, ALOJAMIENTO) values (6, 8, 9);
+insert into SERVICIO (ID, TIPO, ALOJAMIENTO) values (7, 8, 8);
+insert into SERVICIO (ID, TIPO, ALOJAMIENTO) values (8, 14, 9);
+insert into SERVICIO (ID, TIPO, ALOJAMIENTO) values (9, 14, 10);
+insert into SERVICIO (ID, TIPO, ALOJAMIENTO) values (10, 13, 8);
+insert into SERVICIO (ID, TIPO, ALOJAMIENTO) values (11, 19, 11);
+insert into SERVICIO (ID, TIPO, ALOJAMIENTO) values (12, 19, 12);
+insert into SERVICIO (ID, TIPO, ALOJAMIENTO) values (13, 11, 7);
+insert into SERVICIO (ID, TIPO, ALOJAMIENTO) values (14, 14, 7);
+
+
+COMMIT;

@@ -1,0 +1,165 @@
+{
+	"title": "Aplicación transaccional de Alohandes Uniandes",
+	"frameH": 600,
+	"frameW": 800,
+	"bannerPath": "./src/main/resources/config/logo.png",
+	"menuBar":
+	[
+		{ "menuTitle": "TipoAlojamiento",
+		  "options":
+			[
+				{
+					"label": "Adicionar",
+					"event": "adicionarTipoAlojamiento"
+				},
+				{
+					"label": "Listar",
+					"event": "listarTipoAlojamiento"
+				},
+				{
+					"label": "Borrar por Id",
+					"event": "eliminarTipoAlojamientoPorId"
+				},
+				{
+					"label": "Buscar por Nombre",
+					"event": "buscarTipoAlojamientoPorNombre"
+				}
+			]
+		},
+		{ "menuTitle": "Cliente",
+		  "options":
+			[
+				{
+					"label": "Adicionar Cliente (RF3)",
+					"event": "adicionarCliente"
+				}
+			]
+		},
+		{ "menuTitle": "Operador",
+		  "options":
+			[
+				{
+					"label": "Adicionar Operador (RF1)",
+					"event": "adicionarOperador"
+				},
+				{
+					"label": "Mostrar el dinero (RFC1)",
+					"event": "listarOperador"
+				}
+			]
+		},
+		{ "menuTitle": "Reserva",
+		  "options":
+			[
+				{
+					"label": "Registrar una reserva (RF4)",
+					"event": "adicionarReserva"
+				},
+				{
+					"label": "Cancelar una reserva (RF5)",
+					"event": "eliminarReservaPorId"
+				},
+				{
+					"label": "Listar reservas",
+					"event": "listarReservas"
+				}
+				
+			]
+		},
+		{ "menuTitle": "Alojamiento", 
+		  "options":
+			[
+				{
+					"label": "Adicionar Alojamiento [RF2]",
+					"event": "adicionarAlojamiento"
+				},
+				{
+					"label": "Retirar oferta de alojamiento: [RF6]",
+					"event": "eliminarAlojamientoPorId"
+				},
+				{
+					"label": "Mostrar indice de alojamientos: [RFC3]",
+					"event": "listarAlojamiento"
+				}
+			]
+		},
+		{ "menuTitle": "Consultas", 
+		  "options":
+			[
+				{
+					"label": "Listar top 20 ofertas [RFC2]",
+					"event": "listarTop20Oferta"
+				},
+				{
+					"label": "Mostrar alojamientos por fecha y servicio [RFC4]",
+					"event": "listarAlojamientoDisponible"
+				}
+			]
+		},
+		{ "menuTitle": "Mantenimiento",
+		  "options":
+			[
+				{
+					"label": "Mostrar log Parranderos",
+					"event": "mostrarLogParranderos"
+				},
+				{
+					"label": "Mostrar log datanucleus",
+					"event": "mostrarLogDatanuecleus"
+				},
+				{
+					"label": "Limpiar log de parranderos",
+					"event": "limpiarLogParranderos"
+				},
+				{
+					"label": "Limpiar log de datanucleus",
+					"event": "limpiarLogDatanucleus"
+				},
+				{
+					"label": "Limpiar Base de Datos",
+					"event": "limpiarBD"
+				}
+			]
+		},		
+		{ "menuTitle": "Documentación",
+		  "options":
+			[
+				{
+					"label": "Presentación general",
+					"event": "mostrarPresentacionGeneral"
+				},
+				{
+					"label": "Modelo conceptual",
+					"event": "mostrarModeloConceptual"
+				},
+				{
+					"label": "Esquema de la BD",
+					"event": "mostrarEsquemaBD"
+				},
+				{
+					"label": "Script creación de la BD",
+					"event": "mostrarScriptBD"
+				},
+				{
+					"label": "Arquitectura de referencia",
+					"event": "mostrarArqRef"
+				},
+				{
+					"label": "Javadoc Parranderos",
+					"event": "mostrarJavadoc"
+				}
+			]
+		},		
+		{ "menuTitle": "Acerca de ...",
+		  "options":
+			[
+				{
+					"label": "Acerca de ...",
+					"event": "acercaDe"
+				}
+			]
+		}		
+		
+	]
+}
+	

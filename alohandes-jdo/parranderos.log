@@ -1,0 +1,89 @@
+17:53:24,178 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+17:53:24,179 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+17:53:24,207 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+17:53:49,040 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - verificacion: true
+17:56:06,282 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Verificando Alojamiento: 4156
+17:56:06,558 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.persistencia.PersistenciaAlohandes] - Alojamiento [ID=4156, NUMHABITACIONES=8, UBICACION=32692 Gilbert Hill, West Anita, FL 93314, PRECIO=3243497, AMOBLADO=1, CAPACIDAD=14, COMPARTIDO=1, INDICEOCUPACION=27, TIPO=2, HORARIO=2078, SEGURO=null, OPERADOR=3596, ACTIVO=1]
+17:56:06,590 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Fin verificacion Alojamiento: 4156
+17:56:06,590 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - verificacion: true
+17:57:02,422 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando el consumo para TODOS los usuarios con el criterio de búsqueda:CEDULA
+17:57:02,547 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando las reservas existente para un usuario
+17:57:13,751 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - verificacion: true
+17:57:19,288 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Verificando Alojamiento: 4156
+17:57:19,315 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.persistencia.PersistenciaAlohandes] - Alojamiento [ID=4156, NUMHABITACIONES=8, UBICACION=32692 Gilbert Hill, West Anita, FL 93314, PRECIO=3243497, AMOBLADO=1, CAPACIDAD=14, COMPARTIDO=1, INDICEOCUPACION=27, TIPO=2, HORARIO=2078, SEGURO=null, OPERADOR=3596, ACTIVO=1]
+17:57:19,330 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Fin verificacion Alojamiento: 4156
+17:57:19,330 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - verificacion: true
+17:57:29,796 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando el consumo para TODOS los usuarios con el criterio de búsqueda:CEDULA
+17:57:30,839 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando las reservas existente para un usuario
+17:58:01,241 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - verificacion: true
+17:58:04,824 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando las RESERVAS para usuario con id: 2021
+17:58:08,764 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando las reservas existente para un usuario
+17:58:08,764 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando las RESERVAS para usuario con id: 2021
+17:58:12,796 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando las reservas existente para un usuario
+17:58:12,796 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando las RESERVAS para usuario con id: 2021
+17:58:17,960 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando las reservas existente para un usuario
+17:58:17,960 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando las RESERVAS para usuario con id: 2021
+17:58:23,232 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando las reservas existente para un usuario
+17:58:33,800 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - verificacion: true
+17:58:33,800 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando los VO de Cliente
+17:58:34,156 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando los VO de Cliente: 100 existentes
+17:58:34,156 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando los VO de Cliente
+17:58:34,312 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando los VO de Cliente: 100 existentes
+17:58:34,313 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando los VO de Cliente
+17:58:34,563 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando los VO de Cliente: 100 existentes
+18:22:00,198 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+18:22:00,198 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+18:22:00,213 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+18:22:06,010 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - verificacion: true
+18:22:08,288 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando las RESERVAS para usuario con id: 2023
+18:22:12,400 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando las reservas existente para un usuario
+18:22:12,400 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando las RESERVAS para usuario con id: 2023
+18:22:16,362 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando las reservas existente para un usuario
+18:22:16,362 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando las RESERVAS para usuario con id: 2023
+18:22:22,229 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando las reservas existente para un usuario
+18:22:22,229 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando las RESERVAS para usuario con id: 2023
+18:22:33,836 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+18:22:33,836 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+18:22:33,854 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+18:22:40,700 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - verificacion: true
+18:22:45,904 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando las RESERVAS para usuario con id: 2023
+18:22:49,940 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando las reservas existente para un usuario
+18:22:49,940 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando las RESERVAS para usuario con id: 2023
+18:22:53,913 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando las reservas existente para un usuario
+18:22:53,913 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando las RESERVAS para usuario con id: 2023
+18:22:59,742 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando las reservas existente para un usuario
+18:22:59,742 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando las RESERVAS para usuario con id: 2023
+18:23:05,616 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando las reservas existente para un usuario
+11:00:57,818 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Interfaz
+11:00:57,819 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se aplica configuración indicada en el archivo de configuración
+11:00:57,834 (main) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - Se encontró un archivo de configuración válido: Tablas BD
+11:11:20,364 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - verificacion: true
+11:11:31,596 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Verificando Alojamiento: 555
+11:11:31,779 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.persistencia.PersistenciaAlohandes] - Alojamiento [ID=555, NUMHABITACIONES=7, UBICACION=065 Danielle Ramp Apt. 688, Garciafort, VI 77890, PRECIO=5447839, AMOBLADO=0, CAPACIDAD=12, COMPARTIDO=0, INDICEOCUPACION=59, TIPO=6, HORARIO=null, SEGURO=278, OPERADOR=9292, ACTIVO=1]
+11:11:31,795 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Fin verificacion Alojamiento: 555
+11:11:31,795 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - verificacion: true
+11:11:44,964 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando el consumo para TODOS los usuarios con el criterio de búsqueda:CEDULA
+11:11:45,039 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando las reservas existente para un usuario
+11:12:36,753 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - verificacion: true
+11:12:39,939 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Verificando Alojamiento: 444
+11:12:39,947 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.persistencia.PersistenciaAlohandes] - Alojamiento [ID=444, NUMHABITACIONES=9, UBICACION=761 Deborah Heights Suite 781, Kristichester, FM 10371, PRECIO=4982015, AMOBLADO=0, CAPACIDAD=19, COMPARTIDO=1, INDICEOCUPACION=61, TIPO=5, HORARIO=222, SEGURO=null, OPERADOR=2317, ACTIVO=1]
+11:12:39,958 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Fin verificacion Alojamiento: 444
+11:12:39,958 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - verificacion: true
+11:12:50,492 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando el consumo para TODOS los usuarios con el criterio de búsqueda:CEDULA
+11:12:51,288 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando las reservas existente para un usuario
+11:13:17,662 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - verificacion: true
+11:13:22,312 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando las RESERVAS para usuario con id: 2022
+11:13:26,329 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando las reservas existente para un usuario
+11:13:26,329 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando las RESERVAS para usuario con id: 2022
+11:13:30,175 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando las reservas existente para un usuario
+11:13:30,176 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando las RESERVAS para usuario con id: 2022
+11:13:35,493 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando las reservas existente para un usuario
+11:13:35,493 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando las RESERVAS para usuario con id: 2022
+11:13:40,774 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando las reservas existente para un usuario
+11:14:14,966 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.interfazApp.InterfazAlohandesApp] - verificacion: true
+11:14:14,966 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando los VO de Cliente
+11:14:15,269 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando los VO de Cliente: 100 existentes
+11:14:15,269 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando los VO de Cliente
+11:14:15,384 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando los VO de Cliente: 100 existentes
+11:14:15,384 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando los VO de Cliente
+11:14:15,604 (AWT-EventQueue-0) INFO  [uniandes.isis2304.parranderos.negocio.Alohandes] - Generando los VO de Cliente: 100 existentes

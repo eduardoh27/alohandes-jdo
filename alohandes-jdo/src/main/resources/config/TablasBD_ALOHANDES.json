@@ -1,0 +1,25 @@
+{
+	"title": "Nombres de las tablas de ALOHANDES Uniandes para la aplicación A",
+	"unidadPersistencia": "Alohandes",
+	"tablas":
+	[
+		"ALOHANDES_sequence",
+		"TIPOMIEMBROCOMUNIDAD",
+		"CLIENTE",
+		"OPERADOR",
+		"TIPOOPERADOREMPRESA",
+		"EMPRESA",
+		"TIPOOPERADORNATURAL",
+		"PERSONANATURAL",
+		"CONTRATO",
+		"SEGURO",
+		"HORARIO",
+		"TIPOALOJAMIENTO",
+		"ALOJAMIENTO",
+		"RESERVA",
+		"TIPOSERVICIOPUBLICO",
+		"SERVICIOPUBLICO",
+		"TIPOSERVICIO",
+		"SERVICIO"
+	]
+}
